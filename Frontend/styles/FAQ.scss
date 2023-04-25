@@ -1,0 +1,40 @@
+.faq-section{
+    background-color: #F5F5F5;
+    .active{
+        background: rgb(237, 85, 33) !important;
+        padding-inline: 12rem;
+        color: white;
+                outline: none;
+        .icon{
+            svg{
+
+                background-color: white;
+                color: black !important;
+            }
+        }
+    }
+    .visible{
+      background-color: white;
+      color: grey;
+      padding: 2rem 1rem;
+      max-width: 55rem;
+      
+    }
+    .hidden{
+        display: none;
+    }
+    .icon{
+        width: 2.5rem;
+        height: 40px;
+        background-color: rgb(237, 85, 33);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform .5s ease-in-out;
+    }
+    @media (max-width:1020px) {
+        .faq-holder{
+            padding-inline: 0 !important ;
+        }
+    }
+}

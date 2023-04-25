@@ -1,0 +1,32 @@
+.career {
+  .opening-career {
+    cursor: pointer;
+    .open-posts {
+      padding-block: 3rem;
+    }
+    .open-posts:hover {
+      background-color: orangered;
+      color: white;
+    }
+    hr {
+      margin: 0;
+    }
+    a{
+      color: black;
+      text-decoration: none;
+    }
+    mark{
+        color: orangered;
+        background-color: inherit;
+    }
+  }
+  @media (max-width:1020px) {
+    .open-posts{
+      display: grid !important;
+      padding-left: 3rem !important;
+      .col{
+        padding-left: 0 !important;
+      }
+    }
+  }
+}

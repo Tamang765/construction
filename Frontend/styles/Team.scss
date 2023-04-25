@@ -1,0 +1,111 @@
+.team{
+    .slick-track{
+        height: 70vh;
+    }
+    .slick-slide{
+        padding-right: 1rem;
+        color:white;
+        .cards{
+       width: fit-content ;
+       img{
+           border-radius: 15px;
+           filter: brightness(0.9);
+       }
+        }
+        .hover-item{
+            text-align: center;
+            visibility: hidden;
+            opacity: 0;
+            border-radius: 15px;
+            transition: all ease 0.4s;
+            background-color: #ED5521;
+            height: 100%;
+            padding-top: 2rem;
+
+        }
+    }
+    .slick-dots li {
+        width: 15px;
+        height: 15px;
+        background-color: black;
+        border-radius: 50%;
+        margin-bottom: 3rem;
+      }
+      .slick-active button:before {
+        opacity: 0 !important;
+      }
+      ul .slick-active {
+        background-color: orangered;
+      }
+.cards:hover .hover-item{
+    visibility: visible;
+    opacity: 1;
+    margin-bottom: 80px;
+}
+.cards{
+    transition: all ease 0.4s;
+}
+.card-body{
+    transition: all ease 0.4s;
+    border-radius: 15px;
+    padding: 0.8rem 3rem;
+    bottom: -1.6rem;
+
+}
+.cards:hover .card-body{
+    opacity: 0;
+    visibility: hidden;
+    margin-bottom: 80px;
+    
+}
+@media (max-width:1400px) {
+    .cards{
+        width: 100% !important;
+        img{
+            width: 22rem;
+            height: 53vh;
+        }
+    }
+
+
+}
+@media only screen and (min-width:800px) and (max-width:1000px) {
+
+    .cards{
+        width: 100% !important;
+        img{
+            width: 299px;
+            height: 47vh;
+        }
+    }
+}
+@media only screen and (min-width:800px) and (max-width:900px) {
+    .slick-slider{
+        padding-left: 3rem;
+    }
+}
+@media (max-width:800px){
+   
+    .slick-track{
+        height:82vh;
+    }
+    .cards{
+        width: 100% !important;
+        img{
+            width: 513px;
+            height: 70vh;
+        }
+    }
+}
+@media (max-width:500px) {
+    .cards{
+        img{
+            width: 366px;
+            height: 48vh;
+        }
+    }
+    .slick-track{
+        height:60vh;
+    }
+}
+}

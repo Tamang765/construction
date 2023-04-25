@@ -1,0 +1,45 @@
+.Values{
+    background-color: #F5F5F5;
+    padding-block: 6rem;
+    
+    .icon{
+        width: 5rem;
+        height: 80px;
+        background: rgb(237, 85, 33);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: transform .5s ease-in-out;
+        border-radius: 10px;
+    }
+.before-icon{
+    top: 7rem;
+    left: 9rem;
+}
+    h3{
+        font-weight: 600;
+    }
+    .cards{
+        box-shadow: 2px 7px 25px 15px rgba(0, 0, 0, 0.05);
+    }
+    .cards:hover svg {
+        transform: rotate(360deg);
+    }
+    .cards:hover .icon {
+        transform: rotate(360deg);
+    }
+    @media only screen and (min-width:1000px) and (max-width:1200px){
+         .before-icon {
+            top: 11rem !important;
+            left: 4rem !important;
+        }
+        .cards{
+            width: 28rem !important;
+        }
+    }
+    @media (max-width:1000px) {
+        .cards{
+            width: 35rem !important;
+        }
+    }
+}

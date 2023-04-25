@@ -1,0 +1,32 @@
+.sticky-navbar {
+    background-color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000 !important; /* Ensure it's above other elements */
+    box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+   a{
+    color: black !important;
+   }
+
+
+  }
+.header{
+  
+    .navbar-collapse{
+        flex-basis: auto;
+        flex-grow: unset;
+        a{
+            color: white;
+        }
+    }
+    .show{
+        a{
+            width: fit-content;
+        }
+    }
+
+}
+    
+
+  
+

@@ -1,0 +1,109 @@
+.testimonial{
+    position: relative;
+    background-image: url("/media/banner.jpg");
+    background-repeat: no-repeat;
+    background-size:cover;
+    background-attachment: fixed;
+    height:70vh;
+    color: white;
+    h3{
+        font-weight: 700;
+    }
+    h2{
+        text-align: initial;
+    }
+    .card{
+        border-radius: 10px;
+        box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+        height: 55vh;
+        .top-bg{
+            background-color: orangered;
+            height: 1vh;
+            width: 100%;
+            border-top-left-radius: 7px;
+            border-top-right-radius: 7px;
+            transform: translateY(-0.79px);
+        }
+        small{
+            padding-inline: 40px;
+            font-size: 14px;
+            line-height: 34px;
+        }
+        .slick-list{
+            height: fit-content;
+        }
+        .slick-dots {
+            bottom: -45px ;
+        }
+        .slick-dots li {
+            width: 15px;
+            height: 15px;
+            background-color: black;
+            border-radius: 50%;
+        }
+        .slick-active button:before{
+            opacity: 0 !important;
+        }
+       ul .slick-active{
+            background-color: orangered;
+        }
+    }
+    .service-icon:hover {
+        background-color: white !important;
+      }
+      .service-icon:hover svg {
+        color: #f57c53 !important;
+      }
+      @media (max-width:1200px){
+        .circle{
+            width: 10.3vw;
+        }
+        .card{
+            width: 23rem !important;
+        }
+        .slick-track{
+            height:  31vh !important;
+        }
+      }
+      @media only screen and (min-width:600px) and (max-width:992px) {
+        .card{
+            width: 35rem !important;
+            height: 57vh;
+            small{
+                font-size: 13px;
+            }
+        }
+      }
+ 
+}
+.testimonial::after{
+    content: "";
+    position: absolute;
+    background: black;
+    top: 0;
+    left: 0;
+    width: 100%;height: 100%;
+    opacity: 0.3;
+}
+@media (max-width:600px) {
+    .slick-track{
+        height: 25vh !important;
+    }
+    .testimonial{
+        height: 107vh;
+        
+    .testimonial-container{
+        flex-direction: column;
+        gap: 3rem;
+        .card{
+            width: 25rem !important;
+           height:  54vh !important;
+           margin-bottom:0  !important;
+        }
+        .slick-dots{
+            bottom: -63px;
+        }
+    }
+
+}
+  }

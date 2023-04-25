@@ -1,0 +1,60 @@
+.process {
+  padding-inline: 0;
+
+  .process-section {
+    background-image: url("/media/clients.jpg");
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 74vh;
+    position: relative;
+    z-index: 1;
+    img {
+      top: 2.5rem;
+      width: 150px;
+      left: 7rem;
+    
+    }
+.Design {
+  transform: none !important;
+}
+    h6 {
+      color: white;
+    }
+  }
+  .process-section::before{
+    content: '';
+    background: #0c0c0c;
+    z-index: 1;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+  }
+@media (max-width:1200px){
+  img{
+    
+    top: 3rem !important;
+    width: 92px !important;
+    left: 7rem !important;
+
+  }
+  small{
+    padding: 0;
+  }
+}
+@media (max-width:500px) {
+  .steps{
+    flex-direction: column;
+    align-items: center;
+    .icon-holder{
+     img{
+       display: none;
+     }
+    } 
+  }
+}
+}

@@ -1,0 +1,49 @@
+@import "Header";
+@import "Slider";
+@import "About";
+@import "Services";
+@import "Process";
+@import "Projects";
+@import "Values";
+@import "Team";
+@import "Circle";
+@import "Counter";
+@import "Blogs";
+@import "Testimonial";
+@import "Footer";
+@import "AboutMarvelous";
+@import "Card";
+@import "AboutLeading";
+@import "planning";
+@import "ProjectCard";
+@import "CommonCareProject";
+@import "BlogSection";
+@import "Categories";
+@import "QuoteBy";
+@import "Reply";
+@import "Career";
+@import "Contact";
+@import "FAQ";
+@import "Gallery";
+@import "NextPrev";
+@import "Register";
+@import "Client";
+@import "Renovation";
+@import "Images";
+@import "Blog1";
+
+
+
+ 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+@media (max-width:600px) {
+    li,p,small{
+        font-size: 14px;
+    }
+}

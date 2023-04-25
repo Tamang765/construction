@@ -1,0 +1,12 @@
+.reply{
+   
+    input{
+        height: 5vh;
+    }
+    input,textarea{
+        border: none;
+        border-bottom: 1px solid rgb(219, 216, 216);
+        outline: none;
+        background-color: inherit;
+    }
+}

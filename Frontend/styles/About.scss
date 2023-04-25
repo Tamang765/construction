@@ -1,0 +1,46 @@
+
+.about{
+    padding-top: 2rem;
+    .about-img::before{
+        content: "";
+        position: absolute;
+        background-color: #ED5521;
+        left: -28px;
+        width: 20rem;
+        height: 25vh;
+        top: -26px;
+        border-radius: 15px;
+
+    }
+    .about-list{
+        li{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            span{
+                background-color: #ED5521;
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: 34px;
+                height: 34px;
+            }
+        }
+        .name{
+            font-weight: 900;
+        }
+    }
+    .working-experience{
+        width: 18rem;
+        position: absolute;
+        background-color: #ED5521;
+        border-radius: 15px;
+        right: 38px;
+        padding: 19px 28px;
+        bottom: -3rem;
+        color: white;
+    }
+    @media (max-width:1020px){
+    }
+}
