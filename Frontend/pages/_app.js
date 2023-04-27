@@ -8,20 +8,23 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Provider } from "react-redux";
 import { Store } from "./../Redux/Store"
 import  axios  from "axios";
+import { useState } from "react";
+import { loaderFunc } from "@/Component/Team/Teams";
 
 
 axios.defaults.withCredentials = true;
 export default function App({ Component, pageProps }) {
- useEffect(() => {
-  Aos.init();
- }, [])
 
+  useEffect(() => {
+   
+    Aos.init();
+ }, [])
   return (
     <>
       <ToastContainer />
       <Provider store={Store}>
         
-      <Layout>
+        <Layout>
       <Component {...pageProps} />
         </Layout>
         </Provider>

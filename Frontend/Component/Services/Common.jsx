@@ -3,7 +3,7 @@ import Client from "@/Component/Client/Client";
 import Image from "@/Component/Common/Image";
 import LineName from "@/Component/Common/lineName";
 import Counter from "@/Component/Counter/Counter";
-import ServiceCard from "@/Component/Services/ServiceCard";
+import ServicesCards from "@/Component/Services/ServicesCards";
 import { ServiceData } from "@/Component/Services/Services";
 import Testimonial from "@/Component/Testimonial/Testimonial";
 import Values from "@/Component/Values/Values";
@@ -15,46 +15,37 @@ const Common = ({filteredId,link,id }) => {
   var settings = {
     dots: true,
     infinite: false,
+    arrows:false,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    arrows: false,
     initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
         settings: {
           slidesToShow: 3,
-          slidesToScroll: 1,
-          infinite: false,
-          dots: true,
-        },
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
       },
       {
-        breakpoint: 1000,
+        breakpoint: 950,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,
-          initialSlide: 2,
-          dots: true,
-        },
+          initialSlide: 2
+        }
       },
       {
-        breakpoint: 800,
+        breakpoint: 780,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 1,
-          initialSlide: 2,
-        },
-      },
-      {
-        breakpoint: 480,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-        },
-      },
-    ],
+          slidesToScroll: 1
+        }
+      }
+    ]
   };
   const otherServices = ServiceData.filter((item) => (item.id !== id))
   console.log(otherServices);
@@ -102,12 +93,12 @@ const Common = ({filteredId,link,id }) => {
             </center>
             <Slider {...settings}>
               {otherServices.map((item) => (
-                <ServiceCard
+                <ServicesCards
                   heading={item.heading}
-                  detail={`${item.detail.slice(0,100)}............read more`}
+                  detail={`${item.detail.slice(0, 100)}............read more`}
                   image={item.img.slice(0, 1)}
                   icon={item.icon}
-                  link={item.link}
+                  otherlink={item.link}
                 />
               ))}
             </Slider>

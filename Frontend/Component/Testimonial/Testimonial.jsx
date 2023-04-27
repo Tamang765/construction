@@ -7,6 +7,9 @@ import Link from "next/link";
 import { Button, Modal } from "react-bootstrap";
 import { useState } from "react";
 import { Title } from "../Common/Card";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getAllTestimonial } from "@/Redux/Slice/TestimonialSlice";
 const TestimonialData = [
   {
     id: "1",
@@ -47,12 +50,12 @@ const Testimonial = () => {
   const [show, setShow] = useState(false);
   var settings = {
     dots: true,
-    infinite: true,
+    infinite: false,
     speed: 500,
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    autoplay: true,
+    autoplay: false,
     initialSlide: 1,
     autoplaySpeed: 2000,
     cssEase: "linear",
@@ -94,6 +97,11 @@ const Testimonial = () => {
   };
   const handleVideo = () => setShow(true);
   const handleShow = () => setShow(false);
+  const dispatch = useDispatch();
+  const { testimonial, isError } = useSelector((state) => state.testimonial)
+  useEffect(() => { 
+    dispatch(getAllTestimonial())
+  },[dispatch])
   return (
     <>
       <div className="testimonial container-fluid mt-5">
@@ -121,31 +129,35 @@ const Testimonial = () => {
             style={{ width: "27rem", marginBottom: "-10rem", zIndex: "1" }}
           >
             <div className="top-bg"></div>
-            <center>
+            <div>
               <div className="px-4 pt-3">
                 <LineName item="What said about us" />
                 <h2 className=" text-black">Customer <Title title="Views"/></h2>
                 <hr />
               </div>
               <div className="customer-review">
+                {
+                  testimonial.map((comments)=>(
+                    <span></span>
+                  ))
+                }
               <Slider {...settings}>
                 {TestimonialData.map((item) => (
                   <div
-                    className="testimonial-person d-flex flex-column justify-content-between align-items-center pt-3"
-                    key={item.id}
+                    className="testimonial-person d-flex flex-column justify-content-between align-items-center"
+                    key={item.id} 
                   >
                     <small>{`"${item.Tesimonial}"`}</small>
-                    {/* <div className="d-flex align-items-center w-100 justify-content-evenly py-4 ">
+                    <div className="d-flex align-items-center w-100 justify-content-evenly py-4 ">
                       <div className="d-flex align-items-center gap-3">
                         <img
                           src="/media/team/comment2.jpg"
                           alt=""
-                          width={60}
+                          width={40}
                           style={{ borderRadius: "50%" }}
                         />
                         <div className="d-flex flex-column">
-                          <span className="name">{item.by}</span>
-                          <span className="address">{item.address}</span>
+                          <small className="name">{item.by}</small>
                         </div>
                       </div>
                       <img
@@ -155,12 +167,12 @@ const Testimonial = () => {
                         height={35}
                         style={{ filter: "opacity(0.1)" }}
                       />
-                    </div> */}
+                    </div>
                   </div>
                 ))}
                 </Slider>
               </div>
-            </center>
+            </div>
           </div>
         </div>
       </div>

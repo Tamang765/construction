@@ -39,7 +39,7 @@ const Contact = () => {
       <div className="container">
         <div className="contact-section d-flex pt-5 mt-4 justify-content-center align-items-center ">
           <div
-            className="col"
+            className="detail-contact col"
             style={{ paddingTop: "34px", paddingInline: "3rem" }}
           >
             <h3 className="fw-bold">Contact Information</h3>
@@ -58,12 +58,11 @@ const Contact = () => {
               ))}
             </div>
           </div>
-          <div className="col" style={{ paddingInline: "3rem" }}>
+          <div className="col contact-form " style={{ paddingInline: "3rem" }}>
             <SendMessage />
           </div>
         </div>
         <Map />
-        
       </div>
         <FAQ />
     </div>

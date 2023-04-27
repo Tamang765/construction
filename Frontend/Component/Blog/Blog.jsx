@@ -63,7 +63,7 @@ export const BlogData = [
       description:"Minim qui amet est proident velit occaecat pariatur aute sint voluptate aute occaecat. Fugiat in sunt tempor labore esse tempor incididunt eiusmod. Esse ullamco ut aliquip dolor sit nisi do voluptate culpa deserunt nostrud aute. Voluptate quis magna amet labore. Officia aliqua pariatur eu adipisicing nulla enim proident occaecat adipisicing est sit. Laborum nisi fugiat quis aute occaecat sit ut officia. Aliquip officia cillum reprehenderit esse ea minim eiusmod amet officia et eiusmod aute cillum. ",
       category: "Exterior",
       icon:<FaIndustry/>,
-      date: "2022-04-20",
+      date: "2023-04-26",
       author: "Hero",
       authorImg:"/media/team/comment2.jpg"
     }, {
@@ -142,6 +142,7 @@ const Blog = () => {
             <h2 className="fw-bold py-2">
               Our <Title title="Blogs"/>
             </h2>
+
             <Slider {...settings}>
               {BlogData.map((item) => (
                   <div className="card border-0 position-relative mt-4 text-center" key={item.id} >

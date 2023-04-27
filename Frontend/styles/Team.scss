@@ -97,15 +97,17 @@
         }
     }
 }
+}
 @media (max-width:500px) {
-    .cards{
-        img{
-            width: 366px;
-            height: 48vh;
+    .team{
+
+        .cards{
+            img{
+                width: 366px;
+            }
+        }
+        .slick-track{
+            height:60vh !important;
         }
     }
-    .slick-track{
-        height:60vh;
-    }
-}
 }

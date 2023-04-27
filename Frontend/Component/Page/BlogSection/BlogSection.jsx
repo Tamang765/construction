@@ -9,18 +9,30 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAllBlog, getAllBlogAsync } from "@/Redux/Slice/BlogSlice";
 import { toast } from "react-toastify";
-
+import { loaderFunc } from "../../Team/Teams";
 const BlogSection = () => {
+  const [loading, setLoading] = useState(true);
   const [active, setActive] = useState(false);
   const [filterData, setFilterData] = useState([]);
   const [categorytitle, setCategoryTitle] = useState("");
   const dispatch = useDispatch();
 
-  const { blogs, isLoading, isError, message } = useSelector((state) => state.blog);
+  const { blogs, isLoading, isError, message } = useSelector(
+    (state) => state.blog
+  ); 
+  
   useEffect(() => {
-    dispatch(getAllBlogAsync());
-    console.log(blogs);
+    const timeout = setTimeout(() => {
+      dispatch(getAllBlogAsync());
+      setLoading(false);
+      console.log(blogs);
+    }, 1000);
+    return () => clearTimeout(timeout);
+
   }, [dispatch]);
+  if (loading) {
+    return loaderFunc();
+  }
 
   return (
     <div className="blogsection container-fluid">
@@ -29,8 +41,10 @@ const BlogSection = () => {
         heading="Our Blog"
       />
       <div className="container mt-5 px-5">
+        
         <div className="row pt-5">
           <div className="blog-list col-lg-8" style={{ paddingRight: "2rem" }}>
+   
             {active ? (
               <>
                 {filterData.map((item) => (
@@ -76,7 +90,13 @@ const BlogSection = () => {
                 ))}
               </>
             ) : (
-              <>
+                <>
+{blogs.map((item) => (
+            <span className="asd">
+              { item.title}
+                    </span>
+                  ))
+}
                 {BlogData.map((item) => (
                   <div div className="blog-item" key={item.id}>
                     <div
@@ -122,6 +142,7 @@ const BlogSection = () => {
             )}
           </div>
           <div className="col-lg-4 pl-4">
+  
             <RecentPost />
             <Categories
               setActive={setActive}

@@ -3,7 +3,7 @@ import AboutLeading from "@/Component/Aboutleading/AboutLeading"
 import Client from "@/Component/Client/Client"
 import Card from "@/Component/Common/Card"
 import Counter from "@/Component/Counter/Counter"
-import Team from "@/Component/Team/Team"
+import Teams from "@/Component/Team/Teams"
 import Testimonial from "@/Component/Testimonial/Testimonial"
 import Values from "@/Component/Values/Values"
 
@@ -29,7 +29,7 @@ const aboutmarvel = () => {
         ))
       }
       <AboutLeading />
-      <Team />
+      <Teams />
       <Counter />
       <Values />
       <Testimonial />

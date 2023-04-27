@@ -16,7 +16,7 @@ console.log(list);
     >
       <div className="w-100">
         <Carousel>
-          {ProjectsData[0].img.map((images, index) => (
+          {project[0].image.map((images, index) => (
             <Carousel.Item>
             <img
               className="d-block w-100"

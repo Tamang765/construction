@@ -106,7 +106,7 @@ const Footer = () => {
             <li><Link href="/contact">Contact</Link></li>
           </ul>
         </div>
-        <div className="subscribe text-white">
+        {/* <div className="subscribe text-white">
           <h4 className="fw-bold pt-5">Subscribe</h4>
           <small>
             Want to be notified about our news. Just sign up <br /> and we'll
@@ -134,7 +134,7 @@ const Footer = () => {
               send
             </span>
           </div>
-        </div>
+        </div> */}
       </div>
       <div className="container text-white">
         <hr />

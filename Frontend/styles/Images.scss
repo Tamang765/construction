@@ -1,5 +1,37 @@
-@media (max-width:700px) {
+@media (max-width:780px) {
     .images{
         flex-direction: column;
+        .half-image
+        {
+            width: 100% !important;
+            display: flex;
+            justify-content: center;    
+            align-items: center;
+
+        }
+        img{
+            width: 30rem;
+            height: 40vh;
+        }
+    }
+}
+@media only screen and (min-width:780px) and (max-width:1000px) {
+    .images{
+        .half-image{
+            img{
+                width: 21rem;
+                height: 40vh;
+            }
+        }
+    }
+}
+@media only screen and (min-width:1000px) and (max-width:1400px) {
+    .images{
+        .half-image{
+            img{
+                width: 29rem;
+                height: 50vh;
+            }
+        }
     }
 }

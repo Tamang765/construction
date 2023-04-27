@@ -1,6 +1,6 @@
 import AboutMarvelous from '@/Component/AboutMarvelous/AboutMarvelous'
 import Counter from '@/Component/Counter/Counter'
-import ServiceCard from '@/Component/Services/ServiceCard'
+import ServicesCards from '@/Component/Services/ServicesCards'
 import { ServiceData } from '@/Component/Services/Services'
 import Values from '@/Component/Values/Values'
 import React from 'react'
@@ -16,7 +16,7 @@ const services = () => {
                   {ServiceData.map((item) => (
               <div className="services-card" style={{width:"24.2rem"}}>
                           
-                  <ServiceCard heading={item.heading} detail={item.detail.slice(0,100)} image={item.img.slice(0, 1)} icon={item.icon} link={item.link} />
+                  <ServicesCards heading={item.heading} detail={item.detail.slice(0,100)} image={item.img.slice(0, 1)} icon={item.icon} link={item.link} />
               </div>
               ))}
               </div>

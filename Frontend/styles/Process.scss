@@ -46,10 +46,16 @@
     padding: 0;
   }
 }
+@media (max-width:900px) {
+  img{
+    display: none;
+  }
+}
 @media (max-width:500px) {
   .steps{
     flex-direction: column;
     align-items: center;
+    gap: 4rem;
     .icon-holder{
      img{
        display: none;

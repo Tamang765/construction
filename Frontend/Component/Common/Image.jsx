@@ -17,9 +17,9 @@ const Image = ({ items,Data,imgWidth,imgHeight}) => {
    
         <>
         {
-            items.img.slice(0,2).map((img, index) => (
+            items.image.slice(0,2).map((img, index) => (
               
-              <div className="w-50 my-4 py-3"  key={index}>
+              <div className="half-image w-50 my-4 py-3"  key={index}>
               <img
                 src={img}
                 alt=""

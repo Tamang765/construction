@@ -47,7 +47,6 @@ li::before{
     @media (max-width:700px) {
         .carousel{
             img{
-
                 height: 45vh;
             }
         }
@@ -57,6 +56,9 @@ li::before{
         .images-section{
             padding: 0 !important;
             width: 100%;
+            img{
+                width: 21rem;
+            }
         }
         .client-category{
             width: 100% !important;

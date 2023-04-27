@@ -3,14 +3,17 @@ import LineName from "../Common/lineName";
 import ProjectCard from "./ProjectCard";
 import Link from "next/link";
 import { Title } from "../Common/Card";
+import { getAllProjects } from "@/Redux/Slice/ProjectSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
 
 export const ProjectsData = [
   {
     id: "1",
-    projectname: "Planning & Designing",
+    projectName: "planning & designing",
     heading: "Planning & Designing",
     area: "Balaju, Kathmandu",
-    projectDesc:
+    projectDescription:
       "We are proud to have designed and built several commercial buildings for our clients. One recent project we completed was a new office building for our client, XYZ Corporation. Here are some details about the project: ",
     img: [
       "/media/Projects/5.jpg",
@@ -39,10 +42,10 @@ export const ProjectsData = [
   },
   {
     id: "2",
-    projectname: "Remodeling",
+    projectName: "Remodeling",
     heading: "Remodeling",
     area: "Balaju, Kathmandu",
-    projectDesc:
+    projectDescription:
       "We offer high-quality remodeling services that can transform your existing space into a beautiful and functional environment. Recently, we remodeled Kitchen Interior for our client Mr. MNO.",
     img: [
       "/media/Projects/5.jpg",
@@ -56,10 +59,10 @@ export const ProjectsData = [
   },
   {
     id: "3",
-    projectname: "Residential properties",
+    projectName: "Residential properties",
     heading: "Residential properties",
     area: "Balaju, Kathmandu",
-    projectDesc: "Residential building for our client MR ABC.",
+    projectDescription: "Residential building for our client MR ABC.",
     img: [
       "/media/Projects/1.jpg",
       "/media/Projects/1.jpg",
@@ -90,6 +93,11 @@ export const ProjectsData = [
 
 ];
 const Projects = () => {
+  const dispatch = useDispatch();
+  const {projectdata,isError} =useSelector((state)=>state.project);
+  useEffect(() => {
+    dispatch(getAllProjects());
+  },[dispatch])
   return (
     <section className="explore-projects">
       <div className="projects container mt-5">
@@ -97,16 +105,21 @@ const Projects = () => {
         <h2 className="fw-bold py-2">
           Our <Title title="Projects"/>
         </h2>
-        {ProjectsData.slice(0, 3).map((item) => (
+        {/* {projectdata.map((items)=>(
+          <span>{ items.projectDescription}</span>
+        ))
+        } */}
+        {projectdata.slice(0, 3).map((item, index) => (
           <ProjectCard
-            id={item.id}
+            id={index+1}
             link={`/${item.link}`}
             heading={item.heading}
             area={item.area}
-            projectDesc={item.projectDesc}
-            projectname={item.projectname}
-            image={item.img[0]}
-          ></ProjectCard>
+            projectDescription={item.projectDescription}
+            projectName={item.projectName}
+            image={item.image[0].filePath}
+          >
+          </ProjectCard>
         ))}
         <center>
           <Link href="/project"
@@ -115,7 +128,7 @@ const Projects = () => {
               padding: "20px",
               borderRadius: "20px",
               border: "none",
-              background: "orangered",
+              background: "#f57c53",
               color: "white",
               textDecoration:"none"
             }}

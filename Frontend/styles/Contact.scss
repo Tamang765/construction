@@ -55,9 +55,15 @@
         line-height: 3;
     }
     @media (max-width:1020px) {
+        .contact{
+            padding: 0;
+        }
         .contact-section{
             flex-direction: column;
             gap: 6rem;
+            .detail-contact{
+                padding: 0 !important;
+            }
         }
         form{
 padding: 20 !important;
@@ -66,5 +72,8 @@ line-height: 60px !important;
         .email-number{
             flex-direction: column;
         }
+.contact-form{
+    padding: 0;
+}
     }
 }

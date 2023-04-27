@@ -1,11 +1,23 @@
 .career {
   .opening-career {
     cursor: pointer;
+    .show-more{
+      padding: 5px 30px;
+      border-radius: 20px;
+      color: black;
+      background: transparent;
+      border: 1px solid ;
+      font-size: 15px;
+      text-decoration: none;
+    }
+    .show-more:hover{
+      background: #ED5521;
+    }
     .open-posts {
       padding-block: 3rem;
     }
     .open-posts:hover {
-      background-color: orangered;
+      background-color: #ED5521;
       color: white;
     }
     hr {

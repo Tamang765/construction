@@ -7,11 +7,8 @@
    a{
     color: black !important;
    }
-
-
   }
 .header{
-  
     .navbar-collapse{
         flex-basis: auto;
         flex-grow: unset;
@@ -27,6 +24,12 @@
 
 }
     
+@media (max-width:1000px) {
+    .header{
+        position: fixed !important;
+        width: 100%;
+    }
+}
 
   
 

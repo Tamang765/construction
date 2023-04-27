@@ -32,9 +32,29 @@
         justify-content: center;
         transition: transform .5s ease-in-out;
     }
-    @media (max-width:1020px) {
+    @media (max-width:1200px) {
         .faq-holder{
             padding-inline: 0 !important ;
         }
     }
+    @media (max-width:990px) {
+        .faq-holder{
+            .btn{
+                width: 34rem !important;
+            }
+            .visible{
+                width: 34rem !important;
+            }
+        }
+    }
+    @media (max-width:580px) {
+        .faq-holder{
+            .btn{
+                max-width: 19rem !important;
+            }
+            .visible{
+                width: 19rem !important;
+            }
+        }
+}
 }

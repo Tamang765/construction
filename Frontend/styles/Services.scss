@@ -1,146 +1,265 @@
+// .services {
+//   padding-bottom: 7rem;
+//   position: relative;
 
-.services {
-  padding-bottom: 7rem;
-position: relative;
+//   .lineName {
+//     span {
+//       justify-content: center;
+//     }
+//   }
+//   a {
+//     color: black;
+//     text-decoration: none;
+//   }
+//   .all-services {
+//     padding: 20px;
+//     border-radius: 20px;
+//     border: none;
+//     background: #f57c53;
+//     color: white;
+//     text-decoration: none;
+//   }
 
-.lineName{
-  span{
-    justify-content: center;
+//   .link-btn {
+//     text-decoration: none;
+//     display: block;
+//   }
+//   .line {
+//     transform: perspective(1px) translateZ(0);
+//     transition: 0.4s;
+//     cursor: pointer;
+//     border-radius: 10px;
+//     border: none;
+//     display: block;
+//     overflow: hidden;
+//     transition: all 0.4s cubic-bezier(0.86, 0.01, 0.15, 0.99);
+//     width: 110px;
+//     height: 3px;
+//     background-color: rgba($color: #f57c53, $alpha: 0.1);
+//   }
+//   button::before {
+//     content: "";
+//     position: absolute;
+//     z-index: -1;
+//     top: 0px;
+//     left: 0px;
+//     right: 0px;
+//     bottom: 0;
+//   }
+//   .line::before {
+//     background: rgb(255, 90, 20);
+//     clip-path: inset(0 100% 0 0);
+//     opacity: 1;
+//     transition: 0.4s;
+//   }
+//   .line:hover::before {
+//     clip-path: inset(0 0 0 0);
+//   }
+//   .cards {
+//     height: 70vh;
+//     width: 26.5vw;
+//     box-shadow: 2px 7px 25px 15px rgba(0, 0, 0, 0.05);
+//     border-radius: 20px;
+//     overflow: hidden;
+//     img {
+//       border-radius: 10px 10px 0 0;
+//       transition: all 0.5s;
+//     }
+//     img:hover {
+//       transform: scale(1.1, 1.1);
+//     }
+//   }
+//   .slick-initialized .slick-slide {
+//     width: fit-content !important;
+//     height: fit-content !important;
+//   }
+//   .link-btn:hover {
+//     clip-path: inset(0 0 0 0);
+//   }
+//   .slick-track {
+//     display: flex;
+//     gap: 34px;
+//     height: 80vh;
+//   }
+//   ul {
+//     li {
+//       background-color: white;
+//       border: 1px solid #bebebe;
+//       border-radius: 50%;
+//     }
+//     .slick-active {
+//       background-color: #f57c53;
+//     }
+//   }
+//   .slick-dots li {
+//     width: 15px;
+//     height: 15px;
+//   }
+//   @media (max-width: 1020px) {
+//     .service-container {
+//       padding-top: 0 !important;
+//     }
+//     .services-card {
+//       width: 20.2rem !important;
+//       .cards {
+//         width: 20rem;
+//         height: 20vh !important;
+//         padding-bottom: 30rem;
+//       }
+//     }
+//   }
+//   @media (max-width: 900px) {
+//     .services {
+//       .services-card {
+//         width: 31.2rem;
+//         .cards {
+//           width: 13.9rem;
+//           height: 20vh !important;
+//           padding-bottom: 30rem;
+//         }
+//       }
+//       .slick-track {
+//         gap: 26px;
+//         height: 80vh;
+//       }
+//     }
+//   }
+
+
+// }
+// .services::before {
+//   content: "";
+//   background-image: url("/media/Moon1.svg");
+//   position: absolute;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   z-index: -1;
+//   opacity: 0.1;
+
+//   background-position: right;
+// }
+
+// @media only screen and (min-width: 600px) and (max-width: 800px) {
+//   .services {
+//     .cards {
+//       height: 59vh !important;
+//       width: 31vw !important;
+//     }
+//   }
+// }
+// @media  (max-width: 500px){
+//   .services {
+//     .slick-slide{
+
+//       .cards {
+//         height: 59vh !important;
+//         width: 21vw !important;
+//       }
+//     }
+//   }
+// }
+// @media (max-width: 600px) {
+//   .services{
+//     .slick-list {
+//       height: 80vh;
+//     }
+//     .slick-slide {
+//       .cards {
+//         width: 26rem !important;
+//         height: 67vh !important;
+//       }
+//     }
+//   }
+// }
+
+
+.services{
+  padding: 10px;
+  .all-services {
+    padding: 20px;
+    border-radius: 20px;
+    border: none;
+    background: #f57c53;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 3rem;
   }
-}
-a{
-  text-decoration: none;
-  color: black;
-}
-.link-btn {
-  text-decoration: none;
-  display: block;
-  
-}
-.line {
-  transform: perspective(1px) translateZ(0);
-  transition: 0.4s;
-  cursor: pointer;
-  border-radius: 10px;
-  border: none;
-  display: block;
-  overflow: hidden;
-  transition: all 0.4s cubic-bezier(0.86, 0.01, 0.15, 0.99);
-  width: 110px;
-  height: 3px;
-  background-color: rgba($color: #f57c53, $alpha: 0.1);
-}
-button::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0px;
-  left: 0px;
-  right: 0px;
-  bottom: 0;
-}
-.line::before {
-  background: rgb(255, 90, 20);
-  clip-path: inset(0 100% 0 0);
-  opacity: 1;
-  transition: 0.4s;
-}
- .line:hover::before {
-  clip-path: inset(0 0 0 0);
-}
- .cards{
-   padding-bottom: 33rem;
-  width: 26.5vw;
-  height: 54vh;
-  box-shadow: 2px 7px 25px 15px rgba(0, 0, 0, 0.05);
+  .service-card{
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
     border-radius: 20px;
     overflow: hidden;
-    img{
-      border-radius: 10px 10px 0 0;
-      transition: all .5s;
-    
+      .lineName {
+    span {
+      justify-content: center;
     }
-    img:hover{
+  }
+  a {
+    color: black;
+    text-decoration: none;
+  }
+  .link-btn {
+    text-decoration: none;
+    display: block;
+  }
+  .line {
+    transform: perspective(1px) translateZ(0);
+    transition: 0.4s;
+    cursor: pointer;
+    border-radius: 10px;
+    border: none;
+    display: block;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.86, 0.01, 0.15, 0.99);
+    width: 110px;
+    height: 3px;
+    background-color: rgba($color: #f57c53, $alpha: 0.1);
+  }
+  button::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    bottom: 0;
+  }
+  .line::before {
+    background: rgb(255, 90, 20);
+    clip-path: inset(0 100% 0 0);
+    opacity: 1;
+    transition: 0.4s;
+  }
+  .line:hover::before {
+    clip-path: inset(0 0 0 0);
+  }
+      img {
+      border-radius: 10px 10px 0 0;
+      transition: all 0.5s;
+    }
+    img:hover {
       transform: scale(1.1, 1.1);
     }
-    
- } .slick-initialized .slick-slide{
-  width: fit-content !important;
-  height: fit-content !important;
-   }
-  .link-btn:hover  {
-      clip-path: inset(0 0 0 0);
-  }
-  .slick-track{
-    display: flex;
-    gap: 34px;
-    height: 80vh;
-  }
-  ul{
   
-      li{
-        background-color: white;
-        border: 1px solid #bebebe;
-        border-radius: 50%;
-      }
-      .slick-active{
-          background-color: #f57c53;
-      }
-  
+  }
+
+    ul {
+    li {
+      background-color: black;
+      border: 1px solid #bebebe;
+      border-radius: 50%;
+    }
+    .slick-active {
+      background-color:orangered;
+    }
   }
   .slick-dots li {
     width: 15px;
     height: 15px;
-  }
- @media (max-width:1020px){
-  .service-container{
-    padding-top: 0 !important;
-
-  }
-  .services-card{
-    width: 20.2rem !important;
-    .cards{
-      width: 20rem;
-      height: 20vh !important;
-      padding-bottom: 30rem;
+    button::before{
+      content: "";
     }
   }
- }
- @media (max-width:900px){
-  .services{
-    .services-card{
-      width: 31.2rem;
-      .cards{
-        width: 13.9rem;
-        height: 20vh !important;
-        padding-bottom: 30rem;
-      }
-    }
-    .slick-track{
-      gap: 26px;
-      height: 80vh;
-    }
-  }
- }
- @media (max-width:600px) {
-  .slick-slide{
-    .cards{
-      width: 19.2rem !important;
-    }
-  }
- }
-}
-.services::before{
-  content: "";
-  background-image: url("/media/Moon1.svg");
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: -1;
-  opacity: 0.1;
-
-  background-position: right;
 
 }

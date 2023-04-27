@@ -3,6 +3,9 @@ import { RiFileList3Line } from "react-icons/ri";
 import Circle from "../Common/Circle";
 import { Title } from "../Common/Card";
 import LineName from "../Common/lineName";
+import { FiPenTool } from "react-icons/fi";
+import { BsBuildings } from "react-icons/bs";
+import { GiLaurelsTrophy } from "react-icons/gi";
 const ProcessData = [
   {
     id: "1",
@@ -12,19 +15,19 @@ const ProcessData = [
   },
   {
     id: "2",
-    icon: <RiFileList3Line color="white" className="icon fs-1" />,
+    icon: <FiPenTool color="white" className="icon fs-1" />,
     step: "Design",
     img: "media/arrow1.png",
   },
   {
     id: "3",
-    icon: <RiFileList3Line color="white" className="icon fs-1" />,
+    icon: <BsBuildings color="white" className="icon fs-1" />,
     step: "Construct",
     img: "media/arrow1.png",
   },
   {
     id: "4",
-    icon: <RiFileList3Line color="white" className="icon fs-1" />,
+    icon: <GiLaurelsTrophy color="white" className="icon fs-1" />,
     step: "Finishing",
   },
 ];
@@ -44,7 +47,7 @@ const Process = () => {
         </center>
         <div className="d-flex">
           <div className="w-100">
-            <div class="steps container d-flex item text-center justify-content-evenly">
+            <div class="steps container d-flex item text-center justify-content-evenly gap-5">
               {ProcessData.map((item) => (
                 <div className="icon-holder position-relative">
                   <div className="d-flex flex-column">

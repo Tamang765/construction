@@ -52,7 +52,7 @@
     font-weight: 600;
   }
   span {
-    color: orangered;
+    color: #f57c53;
     font-weight: 600;
     font-size: 22px;
   }
@@ -67,7 +67,7 @@
     width: 25%;
     height: 2px;
     bottom: 5.8rem;
-    background-color: orangered;
+    background-color: #f57c53;
   }
   strong {
     position: relative;
@@ -127,11 +127,13 @@
 @media only screen and (min-width:300px) and (max-width:600px){
   .project{
     img{
-      width:24rem
+      width:21rem;
+      height: 45vh;
     }
   }
   .project-details {
-    width:24rem
+    width:21rem;
+    height: 55vh;
 
   }
 }

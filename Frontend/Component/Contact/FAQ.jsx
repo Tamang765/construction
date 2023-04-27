@@ -1,5 +1,9 @@
+import { getAllFAQ } from "@/Redux/Slice/FAQSlice";
+import axios from "axios";
 import React, { useState } from "react";
+import { useEffect } from "react";
 import { BsQuestion } from "react-icons/bs";
+import { useDispatch, useSelector } from "react-redux";
 
 const FAQData = [
   {
@@ -30,10 +34,18 @@ const FAQData = [
 const FAQ = () => {
   const [visible, setVisible] = useState(false);
   const [open, setOpen] = useState();
+  const dispatch = useDispatch();
+
+
+  const {faq,isLoading,isError} = useSelector((state)=>state.faq);
   const handleClick = (num) => {
     setVisible(true);
     setOpen(num);
+    console.log(num)
   };
+  useEffect(() => {
+    dispatch(getAllFAQ());
+  }, [dispatch])
 
   return (
     <div className="faq-section container-fluid">
@@ -45,20 +57,21 @@ const FAQ = () => {
                 <small>Frequently Asked Questions</small>
                 <h1 className="fw-bold pt-3">Answer Questions</h1>
                           </div>
-                          <div className="d-flex flex-column gap-3 py-3 my-5">
-              {FAQData.map((faq) => (
+              <div className="d-flex flex-column gap-3 py-3 my-5">
+  
+              {faq.map((faq) => (
                 <div
                   className="faq-holder d-flex flex-column align-items-center "
                   style={{ paddingInline: "9rem" }}
                 >
                   <div
                     className={`btn col d-flex  align-items-center gap-5 outline-none  ${
-                      faq.id === open ? "active" : ""
+                      faq._id === open ? "active" : ""
                     }`}
-                    key={faq.id}
-                    onClick={() => handleClick(faq.id)}
+                    key={faq._id}
+                    onClick={() => handleClick(faq._id)}
                     style={{
-                      maxWidth: "55rem",
+                      width: "55rem",
                      background:"white",
                       padding: "15px 20px",
                     }}
@@ -70,10 +83,10 @@ const FAQ = () => {
                   </div>
                   <div
                     className={`visible  ${
-                      faq.id === open ? "visible" : "hidden"
+                      faq._id === open ? "visible" : "hidden"
                     }`}
                   >
-                    {open && visible && faq.id === open && (
+                    {open && visible && faq._id === open && (
                       <small>{faq.answer}</small>
                     )}
                   </div>

@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { toast } from "react-toastify";
-import blogServices, { getAllBlogs } from "../Service/blogService";
+import  { getAllBlogs } from "../Service/blogService";
 
 const initialState = {
   isError: false,
@@ -11,7 +11,7 @@ const initialState = {
   message: "",
 };
 export const getAllBlogAsync = createAsyncThunk(
-  "blogs/getAll",
+  "posts/getAll",
   async () => {
     try {
       const response =await  getAllBlogs();
@@ -20,7 +20,6 @@ export const getAllBlogAsync = createAsyncThunk(
       const message = error.response && error.response.data;
       toast.error(message);
     }
-
   }
 );
 

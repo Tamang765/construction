@@ -1,5 +1,7 @@
 import LineName from "@/Component/Common/lineName";
+import Link from "next/link";
 import { Carousel } from "react-bootstrap";
+import { FiLinkedin } from "react-icons/fi";
 
 const SliderData = [
   {
@@ -41,8 +43,8 @@ const Slider = () => {
               </h1>
               <p>{item.shortDesc}</p>
               <div className="btn-group d-flex gap-3 mt-4">
-                <button>Our Project</button>
-                <button>Our Services</button>
+                <Link href="/project">Our Project</Link>
+                <Link href="/services">Our Services</Link>
               </div>
             </Carousel.Caption>
           </Carousel.Item>
