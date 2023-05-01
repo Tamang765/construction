@@ -15,8 +15,8 @@ const About = () => {
   return (
     <div className="about container-fluid mt-4 ">
       {
-        AboutData.map((item) => (
-          <Card heading={item.heading} id={item.id} detail={item.detail.slice(0, 300)} image={item.img} cardDetail={item.cardDetail} path={ item.path}>
+        AboutData.map((item,index) => (
+          <Card heading={item.heading} key={index} id={item.id} detail={item.detail.slice(0, 300)} image={item.img} cardDetail={item.cardDetail} path={ item.path}>
             {item.list.map((listitem,index) => (
             <li key={index}>{ listitem}</li> 
             ))}

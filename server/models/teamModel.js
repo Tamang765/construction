@@ -16,14 +16,22 @@ const teamSchema = mongoose.Schema(
         "plaease enter a valid email",
       ],
     },
+  position:  {
+      type: String,
+      required:[true,"Position is required"]
+    },
     phoneNumber: {
       type: Number,
-      required: [true, "please addd number"],
+      required: [true, "please add number"],
     },
-    address: {
+    description: {
       type: String,
-      required: [true, "Please add address"],
+      required: [true, "Please add description"],
       trim: true,
+    },
+    image: {
+      type: Object,
+      default: {},
     },
     dateCreated: {
       type: Date,
@@ -35,6 +43,6 @@ const teamSchema = mongoose.Schema(
   }
 );
 
-const Team= mongoose.model("Team", teamSchema);
+const Team = mongoose.model("Team", teamSchema);
 
-module.exports= Team
+module.exports = Team;

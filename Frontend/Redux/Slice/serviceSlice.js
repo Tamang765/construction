@@ -44,7 +44,7 @@ const serviceSlice = createSlice({
     }
 });
 
-export const setError = (state) => state.service.isError;
-export const setIsLoading = (state) => state.service.isLoading;
-export const setServices =(state)=> state.service.services
+export const setError = (state) => state.services.isError;
+export const setIsLoading = (state) => state.services.isLoading;
+export const setServices =(state)=> state.services.services
 export default serviceSlice.reducer

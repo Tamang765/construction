@@ -1,5 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import { getAllTestimonialService } from '../Service/TestimonialService';
+import { toast } from 'react-toastify';
 
 const initialState = {
     isError: false,
@@ -10,10 +11,10 @@ const initialState = {
 }
 
 export const getAllTestimonial=createAsyncThunk("testimonial/getAll",
-    async () => { 
+    async() => { 
         try {
             const response = await getAllTestimonialService();
-            return response.data;
+            return response;
         } catch (error) {
             const message = error.response && error.response.data;
             toast.error(message);
@@ -35,11 +36,9 @@ const TestimonialSlice = createSlice({
             state.testimonial = action.payload;
         }).addCase(getAllTestimonial.rejected, (state, action) => { 
             state.isError = true;
-            toast.error(action.errror.message);
+            toast.error(action.error.message);
         })
     }
 });
-
-
 export const selectTestimonial = (state) => state.testimonial.testimonial;
 export default TestimonialSlice.reducer;

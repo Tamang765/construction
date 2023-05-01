@@ -6,19 +6,17 @@ const Author = ({ item}) => {
     <div className="author container-fluid mt-5">
       <div className="container">
         <div className="row">
-
-
             <div className="col-md-12 d-flex align-items-center gap-4">
             <div className="img-holder">
               <img
-                src={item.authorImg}
+                src={item?.authorImg}
                 alt=""
                 width={95}
                 style={{ borderRadius: "50%" }}
               />
             </div>
             <div className="text-holder" style={{ lineHeight: "20px" }}>
-              <h6 className="fw-bold">{item.author}</h6>
+              <h6 className="fw-bold">{item?.author}</h6>
               <small>
                 asdsad
               </small>

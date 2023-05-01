@@ -48,7 +48,6 @@ const Common = ({filteredId,link,id }) => {
     ]
   };
   const otherServices = ServiceData.filter((item) => (item.id !== id))
-  console.log(otherServices);
   return (
     <>
       <div className="ServicePart container-fluid">

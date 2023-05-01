@@ -6,12 +6,12 @@ const initialState = {
     isError: false,
     isLoading: false,
     isSuccess: false,
-    team: [],
+    teams: [],
     message: ""
 };
 export const getAllTeamAsync = createAsyncThunk(
     "team/getAll",
-    async () => { 
+    async() => { 
         try {
             const response = await getAllTeams();
             return response;
@@ -21,13 +21,10 @@ export const getAllTeamAsync = createAsyncThunk(
         }
     }
 ) 
-export const teamSlice = createSlice({
-  name: "team",
+ const teamSlice = createSlice({
+  name: "teams",
   initialState,
     reducers: {
-        CALC_STORE_VALUE(state, action) {
-            console.log("store");
-          },
     },
     extraReducers: (builder) => { 
         builder.addCase(getAllTeamAsync.pending, (state) => { 
@@ -36,18 +33,15 @@ export const teamSlice = createSlice({
             state.isError = false;
             state.isLoading = false;
             state.isSuccess = true;
-            state.team = action.payload;
-            toast.success(action.payload)
+            state.teams = action.payload;
         }).addCase(getAllTeamAsync.rejected, (state, action) => { 
             state.isError = true;
-            state.isLoading = false;
-            state.message = action.payload;
-            toast.error(action.payload);
+            toast.error(action.error.message);
         })
     }
 });
-export const CALC_STORE_VALUE = teamSlice.actions;
-export const selectLoading = (state) => state.team.isLoading;
-export const selectError = (state) => state.team.isError;
-export const selectTeam = (state) =>state.team.team;
+
+export const setLoading = (state) => state.teams.isLoading;
+export const setError = (state) => state.teams.isError;
+export const setTeam = (state) =>state.teams.teams;
 export default teamSlice.reducer

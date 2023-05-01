@@ -4,6 +4,10 @@ import { MdLocationCity } from "react-icons/md";
 
 import { FaIndustry } from "react-icons/fa";
 import { Title } from "../Common/Card";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getAllBlogAsync } from "@/Redux/Slice/BlogSlice";
+import Link from "next/link";
 
   export const Category = [{
     id: 1,
@@ -135,6 +139,13 @@ const Blog = () => {
       },
     ],
   };
+  const dispatch = useDispatch();
+  const { blogs, isLoading, isError, message } = useSelector(
+    (state) => state.blog
+  ); 
+  useEffect(() => {
+    dispatch(getAllBlogAsync());
+  }, [dispatch]);
       return (
         <div className="blogs container-fluid">
           <div className="container" style={{paddingTop:"8rem"}}>
@@ -142,19 +153,18 @@ const Blog = () => {
             <h2 className="fw-bold py-2">
               Our <Title title="Blogs"/>
             </h2>
-
             <Slider {...settings}>
-              {BlogData.map((item) => (
+              {blogs.map((item) => (
                   <div className="card border-0 position-relative mt-4 text-center" key={item.id} >
                   <div className="img-holder">  
-                  <img src={item.img[0]} width={390} height={450} />
+                    <img src={item.image.filePath} width={390} height={450} />
                       </div>
                   <div className="blogname d-flex flex-column align-items-center position-absolute end-0" style={{width:"85%", left:"28px",bottom:"-3rem"}}>
-                      <h4>{item.heading}</h4>
+                      <h4>{item.title}</h4>
                           <hr style={{width:"100%"}}/>
                           <div className="btn-group d-flex gap-5 align-items-center">
                               <span className="category-name">{item.category}</span>
-                              <div className="btn"> <strong>Read More</strong> </div>
+                      <Link href={`blog/${item.slug}`}> Read More </Link>
                           </div>
                   </div>
       </div>

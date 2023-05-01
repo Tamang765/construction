@@ -1,42 +1,37 @@
 const asyncHandler = require("express-async-handler");
 const Team = require("../models/teamModel");
 const { fileSizeFormatter } = require("../utils/uploadImage");
-
+const cloudinary= require("cloudinary").v2
 const createTeam = asyncHandler(async (req, res) => {
-  const { name, email, phoneNumber, address, position } = req.body;
-
-  if (!name || !email || !phoneNumber || !address || !position) {
+  const { name, email, phoneNumber, description, position } = req.body;
+  if (!name || !email || !phoneNumber || !description || !position) {
     res.status(400);
     throw new Error("Please fill the required fields");
   }
-
-  let fileData={}
-  if(res.file){
-    let uploadedFile
+  let fileData = {};
+  if(req.file){
+    let uploadedFile;
     try{
       uploadedFile= await cloudinary.uploader.upload(req.file.path, {
         folder: "Marvelous/teams",
         resource_type: "image"
       })
     } catch(error){
-      res.status(500)
+      res.status(500);
       throw new Error("Image could not be uploaded")
     }
-
     fileData={
       fileName: req.file.originalname,
       filePath: uploadedFile.secure_url,
       fileType: req.file.mimetype,
       fileSize: fileSizeFormatter(req.file.size)
     }
-
   }
-
-  const team = Team.create({
+  const team =await Team.create({
     name,
     email,
     phoneNumber,
-    address,
+    description,
     position,
     image: fileData
   });
@@ -82,7 +77,7 @@ const deleteTeam = asyncHandler(async (req, res) => {
 
 //updating the team member
 const updateTeam = asyncHandler(async (req, res) => {
-  const { name, email, phoneNumber, address, position } = req.body;
+  const { name, email, phoneNumber, description, position } = req.body;
   const { id } = req.params;
 
   const team = await Team.findById(id);
@@ -97,7 +92,7 @@ const updateTeam = asyncHandler(async (req, res) => {
         name,
         email,
         phoneNumber,
-        address,
+        description,
         position,
       },
       {

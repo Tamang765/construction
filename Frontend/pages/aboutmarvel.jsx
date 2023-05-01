@@ -3,9 +3,11 @@ import AboutLeading from "@/Component/Aboutleading/AboutLeading"
 import Client from "@/Component/Client/Client"
 import Card from "@/Component/Common/Card"
 import Counter from "@/Component/Counter/Counter"
-import Teams from "@/Component/Team/Teams"
+import Teams, { loaderFunc } from "@/Component/Team/Teams"
 import Testimonial from "@/Component/Testimonial/Testimonial"
 import Values from "@/Component/Values/Values"
+import { useEffect } from "react"
+import { useState } from "react"
 
 const AboutConstruction=[   {
   id: "1",
@@ -16,6 +18,16 @@ const AboutConstruction=[   {
   cardDetail:"Our technicality make a different construction building."
 }]
 const aboutmarvel = () => {
+  const [loading, setLoading] = useState(true);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+    return () => clearTimeout(timeout);
+  }, [setLoading]);
+  if (loading) {
+    return loaderFunc();
+  }
   return (
     <><AboutMarvelous heading="Construction Firm" titleBlog="About Norc"/>
      

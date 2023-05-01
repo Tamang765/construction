@@ -18,7 +18,7 @@ const TopFooterData = [
   {
     id: "2",
     head: "Write to us",
-    info: "info@app.technologies.com",
+    info: "marvelousconsults@gmail.com",
     icon: <BsMailbox className="fs-1" />,
   },
   {
@@ -106,35 +106,6 @@ const Footer = () => {
             <li><Link href="/contact">Contact</Link></li>
           </ul>
         </div>
-        {/* <div className="subscribe text-white">
-          <h4 className="fw-bold pt-5">Subscribe</h4>
-          <small>
-            Want to be notified about our news. Just sign up <br /> and we'll
-            send you a notification by email.
-          </small>
-          <div
-            className="position-relative d-flex justify-content-center align-items-center"
-            style={{ width: "fit-content" }}
-          >
-            <input
-              type="text"
-              placeholder="Email address"
-              style={{
-                width: "20vw",
-                height: "4vh",
-                  padding: "30px",
-                borderRadius:"15px",
-                outline: "none",
-              }}
-            />
-            <span
-              className="btn icon text-white position-absolute end-0"
-              style={{ width: "4vw", height: "50px",marginRight:"8px" }}
-            >
-              send
-            </span>
-          </div>
-        </div> */}
       </div>
       <div className="container text-white">
         <hr />

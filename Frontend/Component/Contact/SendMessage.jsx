@@ -21,10 +21,8 @@ const SendMessage = () => {
     }
     try {
       await postEnquiry(enquiryData);
-      console.log({...formData});
       toast.success("Message Sent Successfully");
     } catch (error) {
-      console.log(error);
     }
     
   }

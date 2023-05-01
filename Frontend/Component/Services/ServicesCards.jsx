@@ -3,9 +3,8 @@ import React from "react";
 import { ServiceData } from "./Services";
 
 const ServicesCards = ({ image, heading, detail, icon, link ,otherlink}) => {
-    console.log(link);
   return (
-    <div className="services d-flex w-100 pt-5" style={{ height: "inherit" }}>
+    <div className="services d-flex w-100 pt-3" style={{ height: "inherit" }}>
       <div
         className="service-card border-0"
         style={{ borderRadius: "20px" }}
@@ -31,12 +30,12 @@ const ServicesCards = ({ image, heading, detail, icon, link ,otherlink}) => {
         >
           {icon}
         </div>
-        <div className=" mx-4 pt-5 mt-4">
+        <div className=" mx-4 pt-5 mt-5">
           <h3 className="our-services-head fw-bold fs-6">{heading}</h3>
           <small  style={{ fontSize: "smaller" }}>
             {detail}
           </small>
-          <div className="btn d-flex flex-column align-items-start py-4">
+          <div className="btn d-flex flex-column align-items-start py-4" style={{width:"fit-content"}}>
             <Link href={link?`${link}` : `${otherlink}`}>
               <small className="fs-7 fw-bold">View Service</small>{" "}
             </Link>
@@ -44,9 +43,7 @@ const ServicesCards = ({ image, heading, detail, icon, link ,otherlink}) => {
           </div>
         </div>
       </div>
-     
     </div>
   );
 };
-
 export default ServicesCards;

@@ -21,7 +21,7 @@
         }
     }
     img{
-        filter: brightness(0.5);
+        filter: brightness(0.35);
     }
     .carousel-control-prev,.carousel-control-next{
         display: none;
@@ -51,8 +51,8 @@
             font-size: 15px;
         }
         img{
-            height: 100vh;
-            object-fit: cover;
+            height: 110vh;
+            object-fit:cover;
         }
         .btn-group{
             flex-direction: column;

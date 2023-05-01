@@ -2,15 +2,15 @@ const asyncHandler = require("express-async-handler");
 const Testimonial = require("../models/testimonialModel");
 
 const createTestimonial = asyncHandler(async (req, res) => {
-  const { clientID, message } = req.body;
+  const { client, message } = req.body;
 
-  if (!clientID || !message) {
+  if (!client || !message) {
     res.status(400);
     throw new Error("all fields are required");
   }
 
   const testimonial =await Testimonial.create({
-    clientID,
+    client,
     message,
   });
 
@@ -23,7 +23,7 @@ const createTestimonial = asyncHandler(async (req, res) => {
 });
 
 const getAllTestimonial = asyncHandler(async (req, res) => {
-  const testimonials= await Testimonial.find().sort("-createdAt").populate("ClientID")
+  const testimonials= await Testimonial.find().sort("-createdAt").populate("client")
   res.status(200).json(testimonials)
 })
 

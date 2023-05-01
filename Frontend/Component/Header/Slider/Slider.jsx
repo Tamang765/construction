@@ -33,8 +33,8 @@ const Slider = () => {
   return (
     <div className="slider-section">
       <Carousel>
-        {SliderData.map((item) => (
-          <Carousel.Item>
+        {SliderData.map((item,index) => (
+          <Carousel.Item key={index}>
             <img className="d-block w-100" src={item.img} alt="First slide" />
             <Carousel.Caption className="d-flex flex-column align-items-baseline gap-2">
               <LineName item={item.smallhead} />

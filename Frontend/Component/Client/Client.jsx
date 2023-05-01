@@ -21,7 +21,7 @@ const Client = () => {
       <div className="client container-fluid d-flex justify-content-center flex-wrap" style={{backgroundColor:"rgb(237, 85, 33)"}}>
            <center className=" d-flex " style={{maxWidth:"39rem"}} >
               {ClientData.map((item) => (
-                  <div className="d-flex">
+                  <div className="d-flex" key={item.id}>
                       <img src={ item.logo} alt="" width={140}/>
                   </div>
               ))}

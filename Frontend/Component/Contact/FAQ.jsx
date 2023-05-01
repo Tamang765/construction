@@ -41,7 +41,6 @@ const FAQ = () => {
   const handleClick = (num) => {
     setVisible(true);
     setOpen(num);
-    console.log(num)
   };
   useEffect(() => {
     dispatch(getAllFAQ());

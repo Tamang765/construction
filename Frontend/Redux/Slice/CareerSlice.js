@@ -26,9 +26,7 @@ const CareerSlice = createSlice({
   name: "careerdata",
   initialState,
   reducers: {
-    // CALC_STORE_VALUE(state, action) {
-    //     console.log("store");
-    // }
+
   },
   extraReducers: (builder) => {
     builder

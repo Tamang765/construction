@@ -92,8 +92,13 @@
 @media (max-width:800px) {
   .card{
     img{
-      width: 33rem;
-      height: 66vh;
+      width: 37rem;
+      height: 70vh;
+      margin: auto;
+    }
+    .blogname{
+      width: 100%!important;
+      left: 0 !important;
     }
   }
 }

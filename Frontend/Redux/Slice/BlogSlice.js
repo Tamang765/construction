@@ -1,13 +1,14 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import { toast } from "react-toastify";
-import  { getAllBlogs } from "../Service/blogService";
+import  { getAllBlogs, getBlogByID } from "../Service/blogService";
 
 const initialState = {
   isError: false,
   isLoading: false,
   isSuccess: false,
   blogs: [],
+  oneblog:null,
   message: "",
 };
 export const getAllBlogAsync = createAsyncThunk(
@@ -22,6 +23,16 @@ export const getAllBlogAsync = createAsyncThunk(
     }
   }
 );
+export const getBlogsByIDAsync = createAsyncThunk("blog/blogid",
+  async (slug) => { 
+    try {
+      const response = await getBlogByID(slug);
+      return response;
+    } catch (error) {
+      const message = error.response && error.response.data;
+      toast.error(message);
+    }
+  })
 
 export const BlogSlice = createSlice({
   name: "blogs",
@@ -46,12 +57,23 @@ export const BlogSlice = createSlice({
         state.isLoading = false;
         state.isError = true;
         toast.error(action.error.message);
-      });
+      }).addCase(getBlogsByIDAsync.pending, (state) => { 
+        state.isError = false;
+      }).addCase(getBlogsByIDAsync.fulfilled, (state, action) => { 
+        state.isError = false;
+        state.isLoading = false;
+        state.isSuccess = true;
+        state.oneblog=action.payload
+      }).addCase(getBlogsByIDAsync.rejected, (state, action) => { 
+        state.isError = true;
+        toast.error(action.error.message);
+      })
   },
 });
 
 export const CALC_STORE_VALUE = BlogSlice.actions;
 export const selectLoading = (state) => state.blog.isLoading;
 export const selectBlog = (state) => state.blog.blog;
+export const selectOneBlog = (state) => state.blog.oneblog;
 export default BlogSlice.reducer;
 

@@ -76,4 +76,9 @@ line-height: 60px !important;
     padding: 0;
 }
     }
+    @media (max-width:600px) {
+        .contact-form{
+            padding-inline: 0 !important;
+        }
+    }
 }

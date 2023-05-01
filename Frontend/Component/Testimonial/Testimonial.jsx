@@ -10,41 +10,41 @@ import { Title } from "../Common/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { getAllTestimonial } from "@/Redux/Slice/TestimonialSlice";
-const TestimonialData = [
-  {
-    id: "1",
-    Tesimonial: "Their expertise and experience were invaluable, and we were impressed by their dedication to quality and customer satisfaction. We highly recommend this agency to anyone looking for a partner they can trust",
-    by: "Suman Mali",
-    address: "Lalitpur,Nepal",
-  },
-  {
-    id: "2",
-    Tesimonial:
-    	"I was impressed by this engineering agency's commitment to sustainability and environmental responsibility. They took the time to understand our values and priorities and incorporated them into every aspect of our project.",
-    by: "Suman Mali",
-    address: "Lalitpur,Nepal",
-  },
-  {
-    id: "3",
-    Tesimonial:
-      "Their team was knowledgeable, professional, and easy to work with, and I would definitely recommend them to anyone looking for an engineering agency that shares their values. ",
-    by: "Suman Mali",
-    address: "Lalitpur,Nepal",
-  },
-  {
-    id: "4",
-    Tesimonial:
-      "We appreciated their professionalism and expertise, and we look forward to working with them again in the future.",
-    by: "Suman Mali",
-    address: "Lalitpur,Nepal",
-  },
-  {
-    id: "5",
-    Tesimonial: "This engineering agency truly understands the importance of collaboration and communication. They worked closely with our team throughout the entire project, keeping us informed and involved every step of the way.  ",
-    by: "Suman Mali",
-    address: "Lalitpur,Nepal",
-  }
-];
+// const TestimonialData = [
+//   {
+//     id: "1",
+//     Tesimonial: "Their expertise and experience were invaluable, and we were impressed by their dedication to quality and customer satisfaction. We highly recommend this agency to anyone looking for a partner they can trust",
+//     by: "Suman Mali",
+//     address: "Lalitpur,Nepal",
+//   },
+//   {
+//     id: "2",
+//     Tesimonial:
+//     	"I was impressed by this engineering agency's commitment to sustainability and environmental responsibility. They took the time to understand our values and priorities and incorporated them into every aspect of our project.",
+//     by: "Suman Mali",
+//     address: "Lalitpur,Nepal",
+//   },
+//   {
+//     id: "3",
+//     Tesimonial:
+//       "Their team was knowledgeable, professional, and easy to work with, and I would definitely recommend them to anyone looking for an engineering agency that shares their values. ",
+//     by: "Suman Mali",
+//     address: "Lalitpur,Nepal",
+//   },
+//   {
+//     id: "4",
+//     Tesimonial:
+//       "We appreciated their professionalism and expertise, and we look forward to working with them again in the future.",
+//     by: "Suman Mali",
+//     address: "Lalitpur,Nepal",
+//   },
+//   {
+//     id: "5",
+//     Tesimonial: "This engineering agency truly understands the importance of collaboration and communication. They worked closely with our team throughout the entire project, keeping us informed and involved every step of the way.  ",
+//     by: "Suman Mali",
+//     address: "Lalitpur,Nepal",
+//   }
+// ];
 
 const Testimonial = () => {
   const [show, setShow] = useState(false);
@@ -136,18 +136,13 @@ const Testimonial = () => {
                 <hr />
               </div>
               <div className="customer-review">
-                {
-                  testimonial.map((comments)=>(
-                    <span></span>
-                  ))
-                }
               <Slider {...settings}>
-                {TestimonialData.map((item) => (
+                {testimonial.map((item) => (
                   <div
                     className="testimonial-person d-flex flex-column justify-content-between align-items-center"
-                    key={item.id} 
+                    key={item._id}
                   >
-                    <small>{`"${item.Tesimonial}"`}</small>
+                    <small>{`"${item.message}"`}</small>
                     <div className="d-flex align-items-center w-100 justify-content-evenly py-4 ">
                       <div className="d-flex align-items-center gap-3">
                         <img
@@ -156,8 +151,9 @@ const Testimonial = () => {
                           width={40}
                           style={{ borderRadius: "50%" }}
                         />
-                        <div className="d-flex flex-column">
-                          <small className="name">{item.by}</small>
+                        <div className="d-flex ">
+                          <h6>Author</h6>
+                          <small className="name">{item.client?.clientName}</small>
                         </div>
                       </div>
                       <img

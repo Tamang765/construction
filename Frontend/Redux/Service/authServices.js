@@ -7,7 +7,6 @@ export const Registerservice = async (userdata) => {
         const response = await axios.post(`http://localhost:4000/api/register`, userdata, { withCredentials: true })
         return response.data
     } catch (error) {
-        console.log(error);   
     }
 }
 export const LoginUSer = async (userdata) => { 
@@ -18,6 +17,5 @@ export const LoginUSer = async (userdata) => {
         }
         return response.data
     } catch (error) {
-        console.log(error);   
     }
 }

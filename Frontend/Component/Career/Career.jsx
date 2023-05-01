@@ -79,7 +79,6 @@ const Careers = () => {
 
   useEffect(() => {
     dispatch(getAllCareerData());
-    console.log(career);
   }, [dispatch]);
 
   return (
@@ -123,14 +122,14 @@ const Careers = () => {
                     className="col d-flex flex-column align-items-start"
                     style={{ paddingLeft: "8rem" }}
                   >
-                    <div className="col d-flex align-items-center gap-3">
+                    <div className="details col d-flex align-items-center gap-3">
                       <div>
                         <h6 className="fw-bold">Employment Type</h6>
                         <div className="col">{career.type}</div>
                       </div>
                
-                      <button className="show-more" onClick={()=>handleShow(career._id)}>Details</button>
-                    <BsArrowRight />
+                      <button className="show-more d-flex align-items-center" onClick={()=>handleShow(career._id)}>Details <BsArrowRight /></button>
+                    
                     </div>
                   </div>
                 </div>

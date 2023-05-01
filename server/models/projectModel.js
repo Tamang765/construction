@@ -7,6 +7,10 @@ const projectSchema= mongoose.Schema({
         required: [true, "please enter the project name"],
         trim: true
     },
+    slug: {
+        type: String,
+        unique:true,
+    },
     projectDescription: {
         type: String,
         required: [true, "please add the project description"],

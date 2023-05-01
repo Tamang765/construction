@@ -101,7 +101,7 @@
   .slick-track {
     display: flex;
     gap: 34px;
-    height: 75vh;
+    height: auto;
     .slick-initialized .slick-slide {
       width: fit-content !important;
       height: 40vh !important;
@@ -122,4 +122,9 @@
     height: 15px;
   }
 
+  @media (max-width:600px) {
+    .slick-track {
+      gap: 0 !important;
+    }
+  }
 }

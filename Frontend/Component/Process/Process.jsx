@@ -46,7 +46,7 @@ const Process = () => {
           </small>
         </center>
         <div className="d-flex">
-          <div className="w-100">
+          <div className="w-100 pt-5">
             <div class="steps container d-flex item text-center justify-content-evenly gap-5">
               {ProcessData.map((item) => (
                 <div className="icon-holder position-relative">

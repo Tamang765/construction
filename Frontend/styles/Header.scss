@@ -28,6 +28,13 @@
     .header{
         position: fixed !important;
         width: 100%;
+        z-index: 999;
+        background-color: white;
+    }
+    .navbar-collapse {
+        a{
+            color: black  !important;
+        }
     }
 }
 

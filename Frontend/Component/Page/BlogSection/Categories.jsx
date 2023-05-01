@@ -3,13 +3,11 @@ import Link from 'next/link';
 import { useState } from 'react';
 import { AiOutlineRight } from "react-icons/ai";
 const Categories = ({ setActive,setFilterData, active,setCategoryTitle}) => {
-
     const handleClick = (category) => 
         {
        const filteredBlog=BlogData.filter((item)=>(item.category === category))
         setActive(true);
         setFilterData(filteredBlog);
-        console.log(category);
         setCategoryTitle(category);
     }
     const allLoader = () => (
@@ -28,9 +26,9 @@ const Categories = ({ setActive,setFilterData, active,setCategoryTitle}) => {
                       <div className=" d-grid gap-3 py-3">
                       <Link className='btn-category  text-start' href="/blog" onClick={allLoader} style={{paddingLeft:"12px"}}><AiOutlineRight color='orangered'/> All Categories</Link>
                       {Category.map((item) => (         
-                          <>
-                              <small className='btn-category btn text-start'  onClick={()=>handleClick(item.name)}><AiOutlineRight color='orangered'/> { item.name}</small>
-                      </>
+                          <div key={item.id}>
+                              <small className='btn-category btn text-start' onClick={()=>handleClick(item.name)}><AiOutlineRight color='orangered'/> { item.name}</small>
+                      </div>
                           ))
                           }
                           

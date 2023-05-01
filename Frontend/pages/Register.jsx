@@ -31,10 +31,8 @@ const Register = () => {
     }
     try {
       await Registerservice(userdata);
-      console.log({ ...formdata });
       toast.success("Sucessfully registered")
     } catch (error) {
-      console.log(error);
     }
   };
   return (

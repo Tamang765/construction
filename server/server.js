@@ -11,7 +11,9 @@ const testimonialRoutes= require("./routes/testimonialRoute");
 const postRoutes= require("./routes/postRoutes");
 const careerRoutes= require("./routes/careerRoutes");
 const faqRoutes= require("./routes/faqRoutes");
-const projectRoutes= require("./routes/projectRoutes");
+const projectRoutes = require("./routes/projectRoutes");
+const teamRoutes = require("./routes/teamRoutes");
+const postCategoryRoutes = require("./routes/postCategoryRoutes");
 const errorHandler= require("./middlewares/errorMiddlewares")
 
 const cookieParser = require("cookie-parser")
@@ -59,6 +61,8 @@ app.use("/api/posts", postRoutes);
 app.use("/api/career", careerRoutes);
 app.use("/api/faq", faqRoutes);
 app.use("/api/project", projectRoutes);
+app.use("/api/team", teamRoutes);
+app.use("/api/category", postCategoryRoutes);
 
 // Erro Middleware
 app.use(errorHandler)

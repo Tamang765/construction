@@ -5,6 +5,9 @@ import Link from "next/link";
 import Map from "./Map";
 import SendMessage from "./SendMessage";
 import FAQ from "./FAQ";
+import { MdOutlineFax } from "react-icons/md";
+import { AiOutlineMail } from "react-icons/ai";
+import { TiLocation } from "react-icons/ti";
 
 const ContactData = [
   {
@@ -17,19 +20,19 @@ const ContactData = [
     id: "2",
     heading: "Fax Number",
     detail: "+977 9813264124",
-    icon: <BsPhone color="white" className="fs-3" />,
+    icon: <MdOutlineFax color="white" className="fs-3" />,
   },
   {
     id: "3",
-    heading: "Call Us",
-    detail: "+977 9813264124",
-    icon: <BsPhone color="white" className="fs-3" />,
+    heading: "Send Us Email",
+    detail: "info@gmail.com",
+    icon: <AiOutlineMail color="white" className="fs-3" />,
   },
   {
     id: "4",
-    heading: "Call Us",
-    detail: "+977 9813264124",
-    icon: <BsPhone color="white" className="fs-3" />,
+    heading: "Visit Our Office",
+    detail: "Lalitpur, Nepal",
+    icon: <TiLocation color="white" className="fs-3" />,
   },
 ];
 const Contact = () => {

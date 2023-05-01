@@ -1,21 +1,24 @@
 import React from 'react';
 import LineName from '../Common/lineName';
-import { GiBrickWall } from "react-icons/gi";
+import { GiBarrier, GiBrickWall } from "react-icons/gi";
+import { HiOutlineLightBulb } from "react-icons/hi";
 import { Title } from '../Common/Card';
+import { MdFilterCenterFocus, MdGppGood } from 'react-icons/md';
+import { TbCertificate } from 'react-icons/tb';
 const ValuesData = [
     {
         id: "1",
         valuesHead: "Quality",
         valuesDetail: "Committed to delivering high-quality work, ensuring that our services meet or exceed industry standards, and continually striving to improve the work.",
-        icon: <GiBrickWall className='fs-1' color='white' />,
-        iconB:<GiBrickWall className='icon' style={{ color: "grey", opacity: "0.06", width: "7rem", background: "transparent", height: "auto" }}/>
+        icon: <TbCertificate className='fs-1' color='white' />,
+        iconB:<TbCertificate className='icon' style={{ color: "grey", opacity: "0.06", width: "7rem", background: "transparent", height: "auto" }}/>
     }
 ,   {
     id: "2",
     valuesHead: "Client focus",
     valuesDetail: "Marvelous prioritizes the needs and expectations of their clients, taking a proactive approach to understanding their requirements, communicating effectively",
-    icon: <GiBrickWall className='fs-1' color='white' />,
-    iconB:<GiBrickWall className='icon' style={{ color: "grey", opacity: "0.06", width: "7rem", background: "transparent", height: "auto" }}/>
+    icon: <MdFilterCenterFocus className='fs-1' color='white' />,
+    iconB:<MdFilterCenterFocus className='icon' style={{ color: "grey", opacity: "0.06", width: "7rem", background: "transparent", height: "auto" }}/>
     },
     {
         id: "3",
@@ -28,22 +31,22 @@ const ValuesData = [
         id: "4",
         valuesHead: "Innovative",
         valuesDetail: "Our engineers are always looking for creative solutions and new technologies to improve our services. ",
-        icon: <GiBrickWall className='fs-1' color='white' />,
-        iconB:<GiBrickWall className='icon' style={{ color: "grey", opacity: "0.06", width: "7rem", background: "transparent", height: "auto" }}/>
+        icon: <HiOutlineLightBulb className='fs-1' color='white' />,
+        iconB:<HiOutlineLightBulb className='icon' style={{ color: "grey", opacity: "0.06", width: "7rem", background: "transparent", height: "auto" }}/>
     },
     {
         id: "5",
         valuesHead: "Safety",
         valuesDetail: "We always put safety first. The safety of workers, the public, and the environment are the top priority in all our construction projects. ",
-        icon: <GiBrickWall className='fs-1' color='white' />,
-        iconB:<GiBrickWall className='icon' style={{ color: "grey", opacity: "0.06", width: "7rem", background: "transparent", height: "auto" }}/>
+        icon: <GiBarrier className='fs-1' color='white' />,
+        iconB:<GiBarrier className='icon' style={{ color: "grey", opacity: "0.06", width: "7rem", background: "transparent", height: "auto" }}/>
     },
     {
         id: "6",
         valuesHead: "Excellence",
         valuesDetail: "We strive for excellence in everything we do, from the quality of our work to the level of service we provide to our clients ",
-        icon: <GiBrickWall className='fs-1' color='white' />,
-        iconB:<GiBrickWall className='icon' style={{ color: "grey", opacity: "0.06", width: "7rem", background: "transparent", height: "auto" }}/>
+        icon: <MdGppGood className='fs-1' color='white' />,
+        iconB:<MdGppGood className='icon' style={{ color: "grey", opacity: "0.06", width: "7rem", background: "transparent", height: "auto" }}/>
     }
 
 

@@ -29,11 +29,12 @@
 }
 @media (max-width:660px) {
   .about-marvelous{
-    height: 27vh !important;
+    height: 54vh !important;
     background-size: cover;
     background-position: center;
     background-position-y: center;
     background-attachment: unset;
+    margin-top: 0 !important;
     .head-about{
       width: inherit;
       h1{
